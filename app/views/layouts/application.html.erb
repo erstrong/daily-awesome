@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>DailyAwesome</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Daily Awesome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href='http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Open+Sans' rel='stylesheet' type='text/css'>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
 
-<%= yield %>
+  </head>
+  <body>
 
-</body>
+      <div class="container">
+        
+        <ul class="nav nav-tabs">
+          <li><%= link_to "Daily Awesome", root_path %></li>
+          <li><%= link_to "About", about_path %></li>
+
+          <li><%= link_to "Contact", contact_path %></li>
+
+          <div class="pull-right user-info">
+            <% if current_user %>
+              Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to "Sign In", new_user_session_path %> or
+              <%= link_to "Sign Up", new_user_registration_path %>
+            <% end %>
+          </div>
+        </ul>
+
+        <%= yield %>
+
+      </div>
+
+  </body>
 </html>
