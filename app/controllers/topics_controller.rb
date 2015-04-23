@@ -9,12 +9,12 @@ class TopicsController < ApplicationController
 
   def new
     @topic = Topic.new
-    authorize @topic
+    #authorize @topic
   end
 
   def create
     @topic = Topic.new(topic_params)
-    authorize @topic
+    #authorize @topic
     if @topic.save
       flash[:notice] = "Topic was saved."
       redirect_to @topic
