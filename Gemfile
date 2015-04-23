@@ -42,6 +42,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use devise for authentication
 gem 'devise'
+# Use pundit for authorization
+gem 'pundit'
+# Seed data
+gem 'faker'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
