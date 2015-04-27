@@ -1,0 +1,16 @@
+<div class="media">
+  <div class="media-body">
+      <h4 class="media-heading">
+        <%= link_to entry.topic.title, entry.topic %>
+      </h4>
+      <div class="col-md-7">
+        <small> 
+          <%= entry.created_at.to_date %> by <%= entry.user.name %>
+          
+        </small>
+        <br />
+
+        <%= entry.body %>
+    </div>
+  </div>
+</div>

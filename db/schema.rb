@@ -11,16 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423023919) do
+ActiveRecord::Schema.define(version: 20150427201345) do
 
   create_table "entries", force: :cascade do |t|
     t.text     "body"
     t.integer  "user_id"
     t.integer  "topic_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "public",     default: false
   end
 
+  add_index "entries", ["public"], name: "index_entries_on_public"
   add_index "entries", ["topic_id"], name: "index_entries_on_topic_id"
   add_index "entries", ["user_id"], name: "index_entries_on_user_id"
 

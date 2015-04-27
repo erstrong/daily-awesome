@@ -1,2 +1,10 @@
-<h1>Entries#edit</h1>
-<p>Find me in app/views/entries/edit.html.erb</p>
+<h1>Edit Entry</h1>
+<div class="row">
+  <div class="col-md-4">
+    <h4> <% @entry.topic.title %> </h4>
+    <p> <% @entry.topic.prompt %> </p>
+  </div>
+  <div class="col-md-8">
+    <%= render partial: 'form', locals: { entry: @entry } %>
+  </div>
+</div>

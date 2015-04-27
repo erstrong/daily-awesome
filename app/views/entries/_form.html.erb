@@ -1,0 +1,12 @@
+
+<%= form_for [entry] do |f| %>
+  <div class="form">
+    <div class="form-group" >
+      <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter entry body" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Save", class: 'btn btn-success' %>
+    </div>
+
+  </div>
+<% end %>

@@ -47,6 +47,9 @@ gem 'pundit'
 # Seed data
 gem 'faker'
 
+# Bootstrap text editor
+gem 'bootstrap-wysihtml5-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

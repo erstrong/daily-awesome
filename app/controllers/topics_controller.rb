@@ -5,16 +5,18 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    @entries = current_user.entries.where(topic: @topic)
+    @entry = Entry.new
   end
 
   def new
     @topic = Topic.new
-    #authorize @topic
+    authorize @topic
   end
 
   def create
     @topic = Topic.new(topic_params)
-    #authorize @topic
+    authorize @topic
     if @topic.save
       flash[:notice] = "Topic was saved."
       redirect_to @topic
@@ -26,12 +28,12 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find(params[:id])
-    authorize @topic
+    #authorize @topic
   end
 
   def update
     @topic = Topic.find(params[:id])
-    authorize @topic
+    #authorize @topic
     if @topic.update_attributes(topic_params)
       flash[:notice] = "Topic saved."
       redirect_to @topic

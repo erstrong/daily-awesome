@@ -4,33 +4,6 @@
     <p>Guidelines on adding topics</p>
   </div>
   <div class="col-md-8">
-    <%= form_for @topic do |f| %>
-
-      <div class="form-group">
-         <%= f.label :title %>
-        <%= f.text_field :title, class: "form-control", placeholder: "Enter topic title" %>
-      </div>
-
-      <div class="form-group">
-         <%= f.label :prompt %>
-        <%= f.text_area :prompt, rows: 10, class: "form-control", placeholder: "Enter topic prompt" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.radio_button :category, "Writing", :value => "Writing", :checked => true %>
-        <%= label :category_Writing, "Writing" %> <br />
-        <%= f.radio_button :category, "Picture", :value => "Picture" %>
-        <%= label :category_Picture, "Picture" %> <br />
-        <%= f.radio_button :category, "Video", :value => "Video" %>
-        <%= label :category_Video, "Video" %> <br />
-        <%= f.radio_button :category, "Audio", :value => "Audio" %>
-        <%= label :category_Audio, "Audio" %> <br />
-        <%= f.radio_button :category, "Activity", :value => "Activity" %>
-        <%= label :category_Activity, "Activity" %>
-      </div>
-
-      <%= f.submit "Save", class: "btn btn-success" %>
-
-    <% end %>
+    <%= render partial: 'form', locals: { topic: @topic } %>
   </div>
 </div>

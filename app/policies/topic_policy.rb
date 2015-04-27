@@ -1,4 +1,4 @@
-class TopicPolicy
+class TopicPolicy < ApplicationPolicy
   attr_reader :user, :record
   
   def index?
