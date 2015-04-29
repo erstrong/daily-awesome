@@ -5,14 +5,19 @@ class EntriesController < ApplicationController
 
   def show
     @entry = Entry.find(params[:id])
+    authorize @entry
   end
 
   def new
     @entry = Entry.new
+    authorize @entry
   end
 
   def create
+    @topic = Topic.find(params[:topic_id])
     @entry = current_user.entries.new(entry_params)
+    @entry.topic = @topic
+    authorize @entry
     if @entry.save
       flash[:notice] = "Entry was saved."
       redirect_to @entry
@@ -25,12 +30,12 @@ class EntriesController < ApplicationController
 
   def edit
     @entry = Entry.find(params[:id])
-
+    authorize @entry
   end
 
   def update
     @entry = Entry.find(params[:id])
-
+    authorize @entry
     if @entry.update_attributes(entry_params)
       flash[:notice] = "Entry saved."
       redirect_to @entry
@@ -39,8 +44,11 @@ class EntriesController < ApplicationController
       render :edit
     end
   end
-   private
+
+  private
+  
   def entry_params
-    params.require(:entry).permit(:body, :user, :topic)
+    params.require(:entry).permit(:body, :public)
   end
+  
 end

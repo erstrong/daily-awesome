@@ -5,8 +5,19 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :entries
+
+  after_create :set_role
   
+  private
+
   def admin?
     role == 'admin'
   end
+
+  def set_role
+    self.role = "member"
+    self.save!
+  end
+
+
 end
