@@ -10,13 +10,9 @@
         <%= f.check_box :public %> Public entry
       <% end %>
     </div>
-
-
-    <% if f.topic_id.exists? %>
-      <%= f.hidden_field :topic_id, :value => f.topic_id %>
-    <% else %>
-      <%= f.hidden_field :topic_id, :value => @topic.id %>
-    <%end%>
+    
+    <%= f.hidden_field :topic_id, :value => @topic.id %>
+    
 
     <div class="form-group">
       <%= f.submit "Save", class: 'btn btn-success' %>

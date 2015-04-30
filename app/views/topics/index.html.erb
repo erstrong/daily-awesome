@@ -9,7 +9,7 @@
             <%= link_to topic.title, topic %>
           </h4>
           
-            <%= topic.category %> 
+            <%= topic.category %> | <%= topic.display_date.strftime("%m-%d-%Y") %>
         </div>
       </div>
     <% end %>

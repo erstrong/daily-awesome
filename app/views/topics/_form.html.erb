@@ -23,6 +23,11 @@
         <%= label :category_Activity, "Activity" %>
       </div>
 
+      <div class="form-group">
+        <%= f.label :display_date, "Assign a date to this topic" %>
+        <%= f.date_field :display_date %> 
+      </div>
+        
       <%= f.submit "Save", class: "btn btn-success" %>
 
     <% end %>

@@ -8,11 +8,11 @@ class User < ActiveRecord::Base
 
   after_create :set_role
   
-  private
-
   def admin?
     role == 'admin'
   end
+
+  private
 
   def set_role
     self.role = "member"

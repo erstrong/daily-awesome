@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all
+    @topics = Topic.currently_visible
   end
 
   def show
@@ -45,7 +45,7 @@ class TopicsController < ApplicationController
 
   private
   def topic_params
-    params.require(:topic).permit(:title, :prompt, :category)
+    params.require(:topic).permit(:title, :prompt, :category, :display_date)
   end
 
 end

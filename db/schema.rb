@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427201345) do
+ActiveRecord::Schema.define(version: 20150429033306) do
 
   create_table "entries", force: :cascade do |t|
     t.text     "body"
@@ -29,12 +29,14 @@ ActiveRecord::Schema.define(version: 20150427201345) do
   create_table "topics", force: :cascade do |t|
     t.string   "title"
     t.text     "prompt"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "category"
+    t.datetime "display_date"
   end
 
   add_index "topics", ["category"], name: "index_topics_on_category"
+  add_index "topics", ["display_date"], name: "index_topics_on_display_date"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

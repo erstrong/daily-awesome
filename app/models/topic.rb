@@ -4,4 +4,9 @@ class Topic < ActiveRecord::Base
   validates :title, length: { minimum: 5 }, presence: true
   validates :prompt, length: { minimum: 10 }, presence: true
   validates :category, :inclusion => { :in => ['Writing','Picture','Video','Audio','Activity']}
+
+  default_scope {order('display_date DESC')}
+
+  scope :currently_visible, -> { where('display_date < ?', Date.today + 1)}
+
 end

@@ -8,13 +8,8 @@ class EntriesController < ApplicationController
     authorize @entry
   end
 
-  def new
-    @entry = Entry.new
-    authorize @entry
-  end
-
   def create
-    @topic = Topic.find(params[:topic_id])
+    @topic = Topic.find(params[:entry][:topic_id])
     @entry = current_user.entries.new(entry_params)
     @entry.topic = @topic
     authorize @entry
@@ -27,9 +22,9 @@ class EntriesController < ApplicationController
     end
   end
 
-
   def edit
     @entry = Entry.find(params[:id])
+    @topic = @entry.topic
     authorize @entry
   end
 
@@ -48,7 +43,7 @@ class EntriesController < ApplicationController
   private
   
   def entry_params
-    params.require(:entry).permit(:body, :public)
+    params.require(:entry).permit(:body, :public, :topic)
   end
-  
+
 end

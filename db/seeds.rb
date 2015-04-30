@@ -5,8 +5,7 @@ require 'faker'
   user = User.new(
     name: Faker::Name.name,
     email: Faker::Internet.email,
-    password: Faker::Lorem.characters(10),
-    role: "member"
+    password: Faker::Lorem.characters(10)
   )
   user.save!
 end
@@ -18,10 +17,22 @@ categories=["Writing","Picture","Video","Audio"]
   topic = Topic.new(
     title: Faker::Lorem.sentence,
     prompt: Faker::Lorem.paragraph,
-    category: categories.sample
+    category: categories.sample,
+    display_date: rand(10.minutes .. 15.days).ago
   )
   topic.save!
 end
+
+5.times do 
+  topic = Topic.new(
+    title: Faker::Lorem.sentence,
+    prompt: Faker::Lorem.paragraph,
+    category: categories.sample,
+    display_date: Date.today+rand(6)
+  )
+  topic.save!
+end
+
 
 # Create default users
 # Create default users
@@ -32,6 +43,13 @@ admin = User.new(
   role: 'admin'
 )
 admin.save!
+
+member = User.new(
+  name: 'Member User',
+  email: 'member@example.com',
+  password: 'helloworld',
+)
+member.save!
 
 puts "Seed finished"
 puts "#{User.count} users created"
