@@ -10,7 +10,12 @@
         </small>
         <br />
 
-        <%= entry.body %>
+        <% if @entry.image? %>
+          <%= image_tag(@entry.image.large) %>
+          <br />
+        <% end %>
+
+        <div class="entry-body"><%= entry.body.html_safe %></div>
     </div>
   </div>
 </div>

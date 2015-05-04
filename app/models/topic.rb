@@ -9,4 +9,8 @@ class Topic < ActiveRecord::Base
 
   scope :currently_visible, -> { where('display_date < ?', Date.today + 1)}
 
+  def image?
+    self.category == 'Picture'
+  end
+
 end

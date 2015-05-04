@@ -9,7 +9,7 @@
             <%= link_to entry.topic.title, entry %>
           </h4>
           
-            <%= entry.body %> 
+            <%= entry.body.html_safe %> 
         </div>
       </div>
     <% end %>

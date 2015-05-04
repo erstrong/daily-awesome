@@ -48,7 +48,14 @@ gem 'pundit'
 gem 'faker'
 
 # Bootstrap text editor
-gem 'bootstrap-wysihtml5-rails'
+gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
+# Figaro for environment variables
+gem 'figaro', '1.0'
+
+# Gems for image uploader
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -35,20 +35,3 @@ Bootstrap
 Rails 4.2
 
 Gems: devise, will_paginate, pundit
-
-
-Create Roles 
-Create your Add Topic and your View Topic, then your Edit Topic
-Create your entry Form - (no image) (body only form) - then your view and your Edit
-Add the public/not-public flag on your entries
-Then Create your Policy for Topic
-Then create your Policy for Entry
-Then Add your image options to your Topic 
-Then Add image to your entry form - display based on your topic image options flag
-Then add your display_date to your Topic 
-Adjust your view - using a scope on the topic model
-Start thinking about how tags work - write your reqs from tagging
-Add your Admin section
-Add your view for Schedulded Topics  -  Todays Topic - upcoming Topics (#_ at a time), Add link to view all Past Topics.  
-Move your Topic form to the Admin Section - make it ajaxable
-Add image to user
