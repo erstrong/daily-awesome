@@ -6,7 +6,7 @@ If there is time, it will have a discussion forum for sharing and discussing eac
 
 #### Live Link
 
-Coming soon!
+[https://dailyawesome.herokuapp.com/](https://dailyawesome.herokuapp.com/)
 
 #### Test Credentials
 
