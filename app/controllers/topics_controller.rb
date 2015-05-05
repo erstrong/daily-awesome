@@ -3,6 +3,10 @@ class TopicsController < ApplicationController
     @topics = Topic.currently_visible
   end
 
+  def admin
+    @topics = Topic.upcoming
+  end
+
   def show
     @topic = Topic.find(params[:id])
     @entries = current_user.entries.where(topic: @topic)

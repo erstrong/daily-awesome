@@ -35,6 +35,20 @@ h1 {
   margin-top: 5px;
 }
 
+.admin_table {
+  border: 1px solid black;
+}
+
+.admin_table td {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.admin_table h5 {
+  font-family: 'Annie Use Your Telescope', cursive;
+  font-size: 150%;
+}
+
 #entry_body {
   width: 100%;
 }

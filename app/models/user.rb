@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   
   def admin?
-    role == 'admin'
+    self.role == 'admin'
   end
 
   private

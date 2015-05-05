@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   get 'contact' => 'welcome#contact'
 
+  get 'admin' => 'topics#admin'
+
 end
