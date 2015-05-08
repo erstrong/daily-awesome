@@ -17,8 +17,10 @@ class User < ActiveRecord::Base
   private
 
   def set_role
-    self.role = "member"
-    self.save!
+    if self.role == nil
+      self.role = "member"
+      self.save!
+    end
   end
 
 

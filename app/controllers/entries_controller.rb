@@ -1,7 +1,12 @@
 class EntriesController < ApplicationController
   def index
-    @entries = current_user.entries.all
+    if params[:tag]
+      @entries = current_user.entries.tagged_with(params[:tag])
+    else
+      @entries = current_user.entries.all
+    end
   end
+ 
 
   def show
     @entry = Entry.find(params[:id])
@@ -43,7 +48,7 @@ class EntriesController < ApplicationController
   private
   
   def entry_params
-    params.require(:entry).permit(:body, :public, :topic, :image)
+    params.require(:entry).permit(:body, :public, :topic, :image, :tag_list)
   end
 
 end

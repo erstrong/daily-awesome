@@ -2,8 +2,6 @@
 
 The Daily Awesome is an open source journaling app with daily writing prompts. 
 
-If there is time, it will have a discussion forum for sharing and discussing each prompt.
-
 #### Live Link
 
 [https://dailyawesome.herokuapp.com/](https://dailyawesome.herokuapp.com/)
@@ -23,7 +21,7 @@ Coming Soon!
 8. As a moderator I want to be able to add writing prompts (topics)
 9. As a moderator I want to be able to categorize the writing prompts (topics) to set how the form appears to the users (eg includes image uploader)
 10. As a moderator I want to be able to schedule the writing prompts (topics)
-11. As a moderator I want to be able to view the schedule of past and upcoming writing prompts
+11. As a moderator I want to be able to view the schedule of upcoming writing prompts
 12. As a user I want to be able to add tags to my entries
 
 Extras Credit:

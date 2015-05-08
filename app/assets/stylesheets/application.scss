@@ -52,3 +52,11 @@ h1 {
 #entry_body {
   width: 100%;
 }
+
+#tag_cloud {
+  width: 100%;
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+}

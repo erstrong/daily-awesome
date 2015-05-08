@@ -6,7 +6,20 @@
     <p class="lead"><%= @topic.prompt %> <small><%= link_to "Edit", edit_topic_path %></small></p>
     <hr />
     
-    <%= render @entries %>
+    <% @entries.each do |entry| %>
+    <div class="media">
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= link_to entry.topic.title, entry %>
+        </h4>
+          <% if entry.image? %>
+            <%= image_tag(entry.image.large) %>
+            <br />
+          <% end %>
+          <%= entry.body.html_safe %> 
+      </div>
+    </div>
+  <% end %>
     <br />
 
     <h3> Add a new entry </h3>

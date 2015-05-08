@@ -1,23 +1,36 @@
-<h1>Entries</h1>
 
-<div class="row">
-  <div class="col-md-8">
-    <% @entries.each do |entry| %>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">
-            <%= link_to entry.topic.title, entry %>
-          </h4>
-          
-            <%= entry.body.html_safe %> 
-        </div>
+<div class="col-md-4">
+  <h1>Entries</h1>
+  <div class="media">
+    <div class="media-body">
+      <div id="tag_cloud">
+        <h3>Tag Cloud</h3>
+        <% tag_cloud Entry.tag_counts, %w{s m l} do |tag, css_class| %>
+          <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+        <% end %>
       </div>
-    <% end %>
-    
-  </div>
-  <div class="col-md-4">
-
-      Future Link!
-
+    </div>
   </div>
 </div>
+
+
+<div class="col-md-8">
+  <br />
+
+  <% @entries.each do |entry| %>
+    <div class="media">
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= link_to entry.topic.title, entry %>
+        </h4>
+          <% if entry.image? %>
+            <%= image_tag(entry.image.large) %>
+            <br />
+          <% end %>
+          <%= entry.body.html_safe %> 
+      </div>
+    </div>
+  <% end %>
+  
+</div>
+  
