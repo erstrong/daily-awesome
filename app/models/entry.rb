@@ -15,12 +15,14 @@ class Entry < ActiveRecord::Base
   end
 
   def self.tag_counts
-    Tag.select("tags.*, count(tag_maps.tag_id) as count").joins(:tag_maps).group("tag_maps.tag_id")
+    Tag.select("tags.id, tags.name,count(tag_maps.tag_id) as count").
+    joins(:tag_maps).group("tag_maps.tag_id, tags.id, tags.name")
   end
 
   def tag_list
     tags.map(&:name).join(", ")
   end
+
   def tag_list=(names)
     self.tags = names.split(",").map do |n|
       Tag.where(name: n.strip).first_or_create!
