@@ -2,11 +2,13 @@
   <div class="jumbotron">
     <div class="hero">
       <h1>The Daily Awesome</h1>
-      <p>dare to dream. dare to do.</p>
+      <p>daily exercises in creativity and exploration</p>
     </div>
       
     <p>
-      Sign In | Sign Up
+      
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary index-btn' %>
+      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary index-btn' %>
     </p>
   </div>
 </div>
